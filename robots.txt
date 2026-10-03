@@ -1,3 +1,3 @@
 User-agent: *
 Allow: /
-Sitemap: https://artem7sk.github.io/zumip-blog/sitemap.xml
+Sitemap: https://blog.zumip.com/sitemap.xml
