@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Simple payment tracker for one-on-one tutoring sessions</title>
+<meta name="description" content="">
+<link rel="canonical" href="https://artem7sk.github.io/zumip-blog/posts/simple-payment-tracker-for-one-on-one-tutoring-sessions.html">
+<link rel="stylesheet" href="/zumip-blog/style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZUMIPBLOG"></script>
+</head>
+<body>
+<header><a href="/zumip-blog/">Zumip Blog</a> <nav><a href="https://zumip.com/products">Tools</a></nav></header>
+<main>
+<h1>Simple payment tracker for one-on-one tutoring sessions</h1>
+<h2>Simple Payment Tracker for One-on-One Tutoring Sessions: How to Stop Chasing Money and Start Teaching</h2>
+<p><p>If you tutor one-on-one, you already know the awkward part isn&#39;t the lesson — it&#39;s the money. A parent &quot;forgets&quot; to pay for two weeks. A student switches from weekly to biweekly and you lose track of what&#39;s owed. You finish a session, say &quot;I&#39;ll send the total later,&quot; and later never quite comes.</p></p>
+<p><p>A <strong>simple payment tracker for one-on-one tutoring sessions</strong> fixes this — not with accounting software built for corporations, but with a lightweight system you can update in 30 seconds after each lesson. This guide walks you through exactly how to build and run one, plus the mistakes that make tutors lose money month after month.</p></p>
+<p><p>---</p></p>
+<h2>Why One-on-One Tutors Lose Track of Payments</h2>
+<p><p>Group classes have a built-in rhythm: everyone pays before the term starts. One-on-one tutoring is messier because every student has a different arrangement.</p></p>
+<p><p>The most common breakdowns:</p>
+<ul><ul><li><strong>Custom schedules.</strong> One student comes Tuesdays and Thursdays, another every other Saturday. Multiplying sessions by rate in your head stops working fast.</li></ul></ul><ul><ul><li><strong>Mixed payment timing.</strong> Some pay per session, some prepay for a package of 8, some pay monthly in arrears.</li></ul></ul><ul><ul><li><strong>Verbal agreements.</strong> &quot;I&#39;ll pay you at the end of the month&quot; is fine until you have five students saying it and no record of who actually did.</li></ul></ul><ul><ul><li><strong>Cancellations and reschedules.</strong> Was that missed session billable? Did you agree to waive it? Without notes, you&#39;ll guess — and you&#39;ll usually guess in the parent&#39;s favor to avoid conflict.</li></ul></ul>
+<p>The result: you&#39;re not underpaid because parents are dishonest. You&#39;re underpaid because there&#39;s no single place where &quot;what happened&quot; and &quot;what&#39;s owed&quot; live together.</p></p>
+<p><p>---</p></p>
+<h2>What a Simple Payment Tracker Actually Needs</h2>
+<p><p>You don&#39;t need invoicing software with tax automation. For one-on-one tutoring, a payment tracker needs exactly five things:</p></p>
+<p><p>1. <strong>Student name and rate</strong> — including any per-student rate differences (sibling discount, exam-prep premium).</p>
+<p>2. <strong>Session log</strong> — date, duration, and status (completed / cancelled in time / no-show).</p>
+<p>3. <strong>Amount owed per session</strong> — calculated automatically from rate × duration or a flat per-session fee.</p>
+<p>4. <strong>Payments received</strong> — date and amount, so you can match payments to sessions.</p>
+<p>5. <strong>Running balance per student</strong> — the single number that answers &quot;who owes me what right now.&quot;</p></p>
+<p><p>If your system can&#39;t show you a running balance per student at a glance, it&#39;s not a tracker — it&#39;s a diary.</p></p>
+<p><p>---</p></p>
+<h2>Step-by-Step: Build Your Tracker in 20 Minutes</h2>
+<p><p>You can do this in Google Sheets or Excel. Here&#39;s the structure that works.</p></p>
+<h3>Step 1: Create a &quot;Students&quot; tab</h3>
+<p><p>| Student | Rate type | Rate | Payment schedule | Contact |</p>
+<p>|---|---|---|---|---|</p>
+<p>| Emma R. | Per hour | $45 | Monthly, end of month | email/phone |</p>
+<p>| Daniel K. | Per session | $60 | Prepaid package of 8 | email/phone |</p></p>
+<p><p>Keep this tab small. It&#39;s your reference, not your log.</p></p>
+<h3>Step 2: Create a &quot;Sessions&quot; tab</h3>
+<p><p>Columns: `Date | Student | Duration | Status | Billable amount | Notes`</p>
+<ul><ul><li><strong>Status</strong> should be a dropdown: Completed, Cancelled (24h+ notice), No-show, Rescheduled.</li></ul></ul><ul><ul><li><strong>Billable amount</strong> is a formula, e.g. `=IF(status=&quot;Completed&quot;, duration*rate, 0)` — or a flat rate if you charge per session.</li></ul></ul><ul><ul><li><strong>Notes</strong> is where you write &quot;waived — family emergency&quot; so you never re-litigate it.</li></ul></ul>
+<h3>Step 3: Create a &quot;Payments&quot; tab</h3></p>
+<p><p>Columns: `Date received | Student | Amount | Method | Covers period`</p></p>
+<h3>Step 4: Add a &quot;Balances&quot; tab</h3>
+<p><p>This is the payoff. For each student, one formula:</p></p>
+<p><p>`Total billable sessions − Total payments received = Balance due`</p></p>
+<p><p>In Google Sheets, that&#39;s a `SUMIF` pulling from the Sessions tab minus a `SUMIF` pulling from the Payments tab.</p></p>
+<h3>Step 5: Set a weekly 10-minute review</h3>
+<p><p>Every Sunday (or whatever day fits), open the Balances tab. Anyone with a balance older than your payment terms gets a short, friendly message. This single habit prevents 90% of awkward money conversations.</p></p>
+<p><p>---</p></p>
+<h2>A Real Example: One Month With Two Students</h2>
+<p><p>Here&#39;s how the numbers look in practice.</p></p>
+<p><p><strong>Emma — $45/hour, pays monthly:</strong></p>
+<ul><ul><li>Week 1: 1 hour, completed → $45</li></ul></ul><ul><ul><li>Week 2: 1 hour, cancelled with 2 days&#39; notice → $0 (your policy)</li></ul></ul><ul><ul><li>Week 3: 1 hour, completed → $45</li></ul></ul><ul><ul><li>Week 4: 1 hour, no-show → $45 if your policy charges no-shows, $0 if not</li></ul></ul>
+<p>Balance at month end: <strong>$90–$135</strong>, depending on your no-show policy. The tracker shows you the number; your policy decides the rule.</p></p>
+<p><p><strong>Daniel — $60/session, prepaid 8-pack:</strong></p>
+<ul><ul><li>Paid $480 on the 1st → balance shows −$480 (credit)</li></ul></ul><ul><ul><li>Attended 5 sessions → $300 consumed</li></ul></ul><ul><ul><li>Remaining credit: <strong>$180</strong>, i.e. 3 sessions left</li></ul></ul>
+<p>Without a tracker, &quot;how many sessions does Daniel have left?&quot; is a guess. With one, it&#39;s a cell in a spreadsheet.</p></p>
+<p><p>---</p></p>
+<h2>The Three Rules That Make Tracking Actually Work</h2>
+<p><p><strong>1. Log the session before you leave the room.</strong></p>
+<p>Not at the end of the week. The 30 seconds you spend now saves the 20 minutes you&#39;ll spend reconstructing your calendar later.</p></p>
+<p><p><strong>2. Never mix &quot;billable&quot; and &quot;paid&quot; in one column.</strong></p>
+<p>They&#39;re different events happening on different dates. Separate tabs, separate columns, always.</p></p>
+<p><p><strong>3. Send a statement, not a reminder.</strong></p>
+<p>&quot;I noticed your balance is $180 for March — here&#39;s the session breakdown&quot; lands far better than &quot;You still owe me.&quot; A tracker gives you the breakdown for free.</p></p>
+<p><p>---</p></p>
+<h2>Common Mistakes (and How to Avoid Them)</h2>
+<ul><ul><li><strong>Tracking in your head or your calendar app.</strong> Calendars show <em>when</em>, not <em>how much</em>. They can&#39;t hold a balance.</li></ul></ul><ul><ul><li><strong>Using one giant spreadsheet with everything mixed together.</strong> Sessions, payments, and student info in one tab becomes unreadable by month two.</li></ul></ul><ul><ul><li><strong>No written cancellation policy.</strong> The tracker can&#39;t decide whether a no-show is billable — you have to decide that first, in writing, and give it to every new student.</li></ul></ul><ul><ul><li><strong>Reconciling only when something feels off.</strong> By then you&#39;re reconstructing three months of history from memory.</li></ul></ul><ul><ul><li><strong>Forgetting rate changes.</strong> When you raise your rate, note the effective date. Otherwise old sessions get recalculated at the new rate and your balances are wrong.</li></ul></ul>
+<p>---</p>
+<h2>When a Spreadsheet Isn&#39;t Enough: Pre-Built Kits</h2>
+<p><p>Building this from scratch is genuinely doable in an afternoon. But if you&#39;d rather not design formulas, dropdowns, and a balances tab — or if you&#39;re running 2–5 tutors and need everyone using the same system — a pre-built kit saves the setup and the debugging.</p></p>
+<p><p><a href="/products/tutor-admin-ally-lesson-plan-payment-tracker-kit" rel="noopener">«Tutor Admin Ally: Lesson Plan &amp; Payment Tracker Kit»</a> is a digital kit for independent tutors and small tutoring businesses. It includes a ready-made Google Sheets/Excel tracker for payments, scheduling, and student progress, plus customizable lesson plan templates and progress report generators. At $19, it&#39;s roughly the cost of one 30-minute session — and it replaces the spreadsheet-building evening entirely.</p></p>
+<p><p>---</p></p>
+<h2>Quick Checklist: Is Your Payment Tracking Solid?</h2>
+<p><p>Run through this once a month:</p>
+<ul><ul><li>[ ] Every session from the past 30 days is logged with a status</li></ul></ul><ul><ul><li>[ ] Every payment received is recorded with a date</li></ul></ul><ul><ul><li>[ ] Each student&#39;s running balance is current</li></ul></ul><ul><ul><li>[ ] Anyone past your payment terms has been contacted</li></ul></ul><ul><ul><li>[ ] Your cancellation and no-show policy is in writing and shared with new students</li></ul></ul><ul><ul><li>[ ] Rate changes are noted with effective dates</li></ul></ul>
+<p>If you can check all six, you&#39;re ahead of most independent tutors.</p></p>
+<p><p>---</p></p>
+<h2>The Bottom Line</h2>
+<p><p>A simple payment tracker for one-on-one tutoring sessions isn&#39;t about becoming an accountant. It&#39;s about removing the mental load of &quot;wait, did they pay for that?&quot; so you can focus on teaching. Five columns, one weekly review, and a clear policy will do more for your income than any rate increase — because getting paid for the work you&#39;ve already done is the easiest money you&#39;ll ever collect.</p></p>
+<p><p>Start with the structure above, or skip the setup with <a href="/products/tutor-admin-ally-lesson-plan-payment-tracker-kit" rel="noopener">«Tutor Admin Ally: Lesson Plan &amp; Payment Tracker Kit»</a> and have your system running today.</p></p>
+<a class="cta" href="https://zumip.com/products/tutor-admin-ally-lesson-plan-payment-tracker-kit?utm_source=githubblog&utm_medium=article">Get the ready-made toolkit →</a>
+</main>
+<footer>
+<p>© 2026 Zumip — practical guides and ready-made tools.
+<a href="https://zumip.com/products">Browse all toolkits →</a></p>
+</footer>
+</body>
+</html>
