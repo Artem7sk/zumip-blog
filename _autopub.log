@@ -1,2 +1,6 @@
 2026-10-04T00:30:01Z === blog autopublish ===
 ✅ сгенерировано: index + 117 постов + sitemap(118) + robots
+{"errorCode":"UserForbiddedToAccessSite","message":"User is unauthorized to access the site. Please verify the site using the key and try again","details":null}indexnow 403
+2026-10-04T00:30:05Z done
+2026-10-05T00:30:01Z === blog autopublish ===
+✅ сгенерировано: index + 123 постов + sitemap(124) + robots
