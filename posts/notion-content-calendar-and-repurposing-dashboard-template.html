@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notion content calendar and repurposing dashboard template</title>
+<meta name="description" content="">
+<link rel="canonical" href="https://blog.zumip.com/posts/notion-content-calendar-and-repurposing-dashboard-template.html">
+<link rel="stylesheet" href="/zumip-blog/style.css">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-0ZUMIPBLOG"></script>
+</head>
+<body>
+<header><a href="/zumip-blog/">Zumip Blog</a> <nav><a href="https://zumip.com/products">Tools</a></nav></header>
+<main>
+<h1>Notion content calendar and repurposing dashboard template</h1>
+<h2>Notion Content Calendar and Repurposing Dashboard Template: как собрать систему, которая экономит 5–7 часов в неделю</h2>
+<p><p>Если вы ведёте блог, YouTube-канал или соцсети в одиночку, вы наверняка сталкивались с одной и той же проблемой: контент нужно придумывать, планировать, публиковать и переупаковывать — а времени на всё это катастрофически не хватает. Notion content calendar and repurposing dashboard template — это не просто модный шаблон, а рабочий инструмент, который превращает хаос идей в предсказуемый контент-конвейер.</p></p>
+<p><p>В этой статье я разберу, из каких блоков должен состоять такой шаблон, как его настроить под себя за один вечер и где чаще всего ошибаются создатели. А в конце покажу, как ускорить весь процесс с помощью готовой системы.</p></p>
+<p><p>---</p></p>
+<h2>Почему обычного календаря контента недостаточно</h2>
+<p><p>Большинство блогеров и креаторов используют простые таблицы: дата публикации, тема, статус. Это работает, пока контента мало. Но как только вы начинаете переупаковывать один материал в 5–10 форматов (пост, рилс, рассылка, тред, видео), таблица превращается в кашу.</p></p>
+<p><p>Что отличает хороший <strong>repurposing dashboard</strong> от обычного календаря:</p>
+<ul><ul><li><strong>Связь «источник → производные».</strong> Одна идея = одна карточка, из которой растут все форматы.</li></ul></ul><ul><ul><li><strong>Статусы на каждом этапе.</strong> Не «опубликовано», а «черновик → на редактуре → готово → запланировано → опубликовано».</li></ul></ul><ul><ul><li><strong>Поля для переупаковки.</strong> Платформа, формат, ссылка на оригинал, дата повторной публикации.</li></ul></ul><ul><ul><li><strong>Дашборд-представления.</strong> Календарь по датам, канбан по статусам, таблица по платформам.</li></ul></ul>
+<p>Без этих четырёх элементов вы будете каждый раз заново искать, что уже вышло, а что нет.</p></p>
+<p><p>---</p></p>
+<h2>Из чего состоит рабочий Notion content calendar and repurposing dashboard template</h2>
+<p><p>Вот минимальная структура, которую стоит собрать. Её можно воспроизвести вручную в Notion за 1–2 часа.</p></p>
+<h3>1. База данных «Идеи» (Idea Bank)</h3>
+<p><p>Это ваше хранилище мыслей. Поля:</p>
+<ul><ul><li><strong>Название идеи</strong> (title)</li></ul></ul><ul><ul><li><strong>Источник</strong> (select: блог, YouTube, подкаст, соцсети)</li></ul></ul><ul><ul><li><strong>Статус</strong> (select: сырая идея, в работе, использована)</li></ul></ul><ul><ul><li><strong>Теги</strong> (multi-select: тема, аудитория, боль)</li></ul></ul><ul><ul><li><strong>Связанные материалы</strong> (relation → база «Контент»)</li></ul></ul>
+<p>Совет: не пишите в «Идеи» полные сценарии. Только заголовок и одну строку сути. Иначе база превратится в кладбище недописанных черновиков.</p></p>
+<h3>2. База данных «Контент» (Content Calendar)</h3>
+<p><p>Здесь живут все публикации. Поля:</p>
+<ul><ul><li><strong>Заголовок</strong></li></ul></ul><ul><ul><li><strong>Дата публикации</strong> (date)</li></ul></ul><ul><ul><li><strong>Платформа</strong> (select: блог, YouTube, Instagram, LinkedIn, email)</li></ul></ul><ul><ul><li><strong>Формат</strong> (select: статья, видео, рилс, пост, рассылка)</li></ul></ul><ul><ul><li><strong>Статус</strong> (select: черновик, редактура, готово, запланировано, опубликовано)</li></ul></ul><ul><ul><li><strong>Оригинал</strong> (relation → эта же база, чтобы связать производные с источником)</li></ul></ul><ul><ul><li><strong>Ссылка</strong> (url)</li></ul></ul>
+<p>Ключевой момент: <strong>одна карточка = один формат</strong>. Не пытайтесь уместить статью и её рилс в одну строку.</p></p>
+<h3>3. База данных «Переупаковка» (Repurposing Matrix)</h3>
+<p><p>Это то, что отличает любителя от системного создателя. Здесь вы фиксируете: какой исходник → в какие форматы уже разобран.</p>
+<ul><ul><li><strong>Исходный материал</strong> (relation → база «Контент»)</li></ul></ul><ul><ul><li><strong>Целевой формат</strong> (select)</li></ul></ul><ul><ul><li><strong>Целевая платформа</strong> (select)</li></ul></ul><ul><ul><li><strong>Готово?</strong> (checkbox)</li></ul></ul><ul><ul><li><strong>Дата повторной публикации</strong> (date)</li></ul></ul>
+<h3>4. Дашборды (Views)</h3></p>
+<p><p>Создайте минимум 4 представления:</p></p>
+<p><p>1. <strong>Календарь</strong> — по дате публикации (только статус «запланировано» и «опубликовано»).</p>
+<p>2. <strong>Канбан</strong> — по статусу (визуально видно, где затык).</p>
+<p>3. <strong>Таблица по платформам</strong> — фильтр по одной платформе.</p>
+<p>4. <strong>«Готово к переупаковке»</strong> — фильтр: статус = опубликовано, переупаковка = не начата.</p></p>
+<p><p>---</p></p>
+<h2>Пошаговый план: как настроить шаблон за один вечер</h2>
+<p><p>1. <strong>Создайте 3 базы данных</strong> (Идеи, Контент, Переупаковка) на одной странице.</p>
+<p>2. <strong>Настройте relations</strong> между ними: Идеи → Контент, Контент → Переупаковка.</p>
+<p>3. <strong>Добавьте шаблоны карточек.</strong> В Notion внутри базы можно создать Template, который автоматически подставляет нужные поля и чек-лист.</p>
+<p>4. <strong>Сделайте 4 views</strong>, описанных выше.</p>
+<p>5. <strong>Заведите 10 идей</strong> из своей ниши — не меньше. Пустая база не работает.</p>
+<p>6. <strong>Запланируйте первую переупаковку</strong>: возьмите старую статью и распишите 5 производных форматов.</p></p>
+<h3>Чек-лист готовности шаблона</h3>
+<ul><ul><li>[ ] 3 связанные базы данных</li></ul></ul><ul><ul><li>[ ] Минимум 4 views (календарь, канбан, платформа, готово к переупаковке)</li></ul></ul><ul><ul><li>[ ] Шаблоны карточек для каждого типа контента</li></ul></ul><ul><ul><li>[ ] Заполнено 10+ идей</li></ul></ul><ul><ul><li>[ ] Настроен фильтр «опубликовано, но не переупаковано»</li></ul></ul><ul><ul><li>[ ] Есть поле для повторной публикации (recycle date)</li></ul></ul>
+<p>---</p>
+<h2>5 ошибок, которые убивают даже хороший repurposing dashboard</h2>
+<p><p>1. <strong>Слишком много полей.</strong> Если для заполнения карточки нужно 15 минут — вы перестанете это делать.</p>
+<p>2. <strong>Нет связи между оригиналом и производными.</strong> Через месяц вы не вспомните, из какой статьи родился этот рилс.</p>
+<p>3. <strong>Один формат = одна карточка, но без даты переупаковки.</strong> Контент уходит в архив и больше не используется.</p>
+<p>4. <strong>Нет регулярного ревью.</strong> Раз в неделю открывайте view «готово к переупаковке» — это ваш источник нового контента без новых идей.</p>
+<p>5. <strong>Идеи без тегов.</strong> Через 50 карточек поиск превращается в археологию.</p></p>
+<p><p>---</p></p>
+<h2>Как ускорить всё это с готовой системой</h2>
+<p><p>Собрать шаблон вручную реально. Но если вы не хотите тратить вечер на настройку relations, views и шаблонов — есть готовое решение.</p></p>
+<p><p><a href="/products/the-content-multiplier-toolkit-90-day-idea-bank-repurposing-" rel="noopener">«The Content Multiplier Toolkit: 90-Day Idea Bank &amp; Repurposing System»</a> — это текстовый файловый набор для соло-блогеров, ютуберов и создателей контента, которые устали смотреть в пустой лист. Внутри:</p>
+<ul><ul><li><strong>200+ промптов</strong> для идей — банк, из которого можно черпать каждый день.</li></ul></ul><ul><ul><li><strong>Шаблон календаря на 90 дней</strong> — готовая сетка публикаций.</li></ul></ul><ul><ul><li><strong>Матрица кросс-платформенной переупаковки</strong> — как превратить один материал в 5–10 форматов.</li></ul></ul><ul><ul><li><strong>Burnout-proof-система</strong> — чтобы не выгореть на третьей неделе.</li></ul></ul>
+<p>Цена — $19. Это дешевле, чем один час вашего времени, потраченный на сборку шаблона с нуля.</p></p>
+<p><p>---</p></p>
+<h2>Итог: что даёт правильный Notion content calendar and repurposing dashboard template</h2>
+<p><p>Хорошо собранный шаблон решает три задачи:</p></p>
+<p><p>1. <strong>Убирает хаос.</strong> Вы всегда знаете, что выйдет завтра и что лежит в архиве.</p>
+<p>2. <strong>Умножает контент.</strong> Одна идея → 5–10 публикаций без новых усилий.</p>
+<p>3. <strong>Защищает от выгорания.</strong> Идеи не заканчиваются, потому что у вас есть банк и система переупаковки.</p></p>
+<p><p>Начните с малого: соберите три базы данных и заполните 10 идей сегодня. А если хотите сразу получить готовую систему с банком промптов и матрицей переупаковки — загляните в <a href="/products/the-content-multiplier-toolkit-90-day-idea-bank-repurposing-" rel="noopener">«The Content Multiplier Toolkit: 90-Day Idea Bank &amp; Repurposing System»</a>.</p></p>
+<a class="cta" href="https://zumip.com/products/the-content-multiplier-toolkit-90-day-idea-bank-repurposing-?utm_source=githubblog&utm_medium=article">Get the ready-made toolkit →</a>
+</main>
+<footer>
+<p>© 2026 Zumip — practical guides and ready-made tools.
+<a href="https://zumip.com/products">Browse all toolkits →</a></p>
+</footer>
+</body>
+</html>
